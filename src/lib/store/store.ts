@@ -1,14 +1,7 @@
 import { writable } from "svelte/store";
 import type { Writable } from "svelte/store";
+import type { WaterQuality } from "../types";
 
-interface WaterQuality {
-    date: string;
-    time: string;
-    location: string;
-    tap: number;
-    freeChlorine: number;
-
-}
 const store: Writable<WaterQuality[]> = writable([
     {
         date: '2021-01-01',
@@ -29,3 +22,5 @@ const store: Writable<WaterQuality[]> = writable([
 function addItem(item: WaterQuality) {
     store.update((items) => [...items, item]);
 }
+
+export { store, addItem };
