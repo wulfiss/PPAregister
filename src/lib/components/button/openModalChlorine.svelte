@@ -10,5 +10,5 @@
 </script>
 
 <button type="button" on:click={openModal} class="btn variant-filled-primary">
-<span class="font-medium">Agregar medición</span>
+    <span class="font-medium">Agregar medición</span>
 </button>
