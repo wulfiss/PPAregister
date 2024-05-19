@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getModalStore } from '@skeletonlabs/skeleton';
-  import { freeChlorineAddItem } from '$lib/store/chlorineStore';
+  import { fetchDataAndSetStore } from '$lib/utils/getData';
+  import { FreeChlorineStore } from '$lib/store/chlorineStore';
 
   const modalStore = getModalStore();
   export let parent;
@@ -13,13 +14,28 @@
     freeChlorine: 0
   };
 
-  function onFormSubmit() {
+  async function onFormSubmit() {
     if ($modalStore[0].response) {
       $modalStore[0].response(data); 
     }
-    freeChlorineAddItem(data);
-    modalStore.close();
-    resetForm();
+    try{
+      const res = await fetch('/api/chlorine', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        modalStore.close();
+        resetForm();
+        await fetchDataAndSetStore('/api/chlorine', FreeChlorineStore);
+      }else{
+        console.error('Error al enviar los datos');
+      }
+    }catch(error){
+      console.error('Error al enviar los datos');
+    }
   }
 
   function resetForm() {
