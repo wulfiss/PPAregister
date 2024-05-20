@@ -26,3 +26,4 @@ export const POST: RequestHandler = async ({request, body}) => {
 
     return json({ message: "Data inserted successfully"})
 }
+
