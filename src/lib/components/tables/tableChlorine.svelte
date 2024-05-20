@@ -8,8 +8,6 @@
 		await fetchDataAndSetStore('/api/chlorine', FreeChlorineStore);
 	});
 
-	const endpointCustom = '/api/chlorine/xlsx';
-
 	const cCenter = 'text-center normal-case';
 </script>
 
@@ -38,7 +36,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<DownloadXlsx {endpointCustom}/>
+				<DownloadXlsx />
 			</tr>
 		</tfoot>
 	</table>
