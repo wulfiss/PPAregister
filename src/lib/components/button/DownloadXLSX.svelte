@@ -1,10 +1,9 @@
 <script lang="ts">
-    export const endpointCustom: string = ''
 
-    function downloadXLSX(endpointCustom: string) {
-        window.location.href = endpointCustom;
+    function downloadXLSX() {
+        window.location.href ='/api/chlorine/xlsx';
 	}
 
 </script>
 
-<button on:click={() => downloadXLSX(endpointCustom)} class="btn variant-filled-primary">Descarga XLSX</button>
+<button on:click={() => downloadXLSX()} class="btn variant-filled-primary">Descarga XLSX</button>
