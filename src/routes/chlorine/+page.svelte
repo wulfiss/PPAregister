@@ -1,6 +1,8 @@
 <script lang="ts">
 import TableChlorine from "$lib/components/tables/tableChlorine.svelte";
 import FormChlorine from "$lib/components/form/formChlorine.svelte";
+import TableChlorinePlus from "$lib/components/tables/tableChlorinePlus.svelte";
+
 import { getModalStore, type ModalComponent, type ModalSettings } from "@skeletonlabs/skeleton";
 import OpenModalChlorine from "$lib/components/button/openModalChlorine.svelte";
 
@@ -22,5 +24,6 @@ function openModal() {
 </script>
 
 <h1>Cloro Libre</h1>
-<TableChlorine />
+<TableChlorinePlus />
+<!-- <TableChlorine /> -->
 <OpenModalChlorine on:openModal={openModal} />
