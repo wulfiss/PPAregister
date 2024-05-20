@@ -1,7 +1,8 @@
 <script lang="ts">
     import { FreeChlorineStore } from "$lib/store/chlorineStore";
 	import { onMount } from "svelte";
-	import { fetchDataAndSetStore } from "$lib/utils/getData";
+	import { fetchDataAndSetStore, tableData } from "$lib/utils/getData";
+	import DownloadXlsx from "../button/DownloadXLSX.svelte";
 
 	onMount(async () => {
 		await fetchDataAndSetStore('/api/chlorine', FreeChlorineStore);
@@ -35,8 +36,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<!-- <th colspan="3">Calculated Total Weight</th> -->
-				<!-- <td>{totalWeight}</td> -->
+				<DownloadXlsx />
 			</tr>
 		</tfoot>
 	</table>
