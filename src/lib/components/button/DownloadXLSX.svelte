@@ -1,10 +1,10 @@
 <script lang="ts">
-    import { tableData } from "$lib/utils/getData";
+    export const endpointCustom: string = ''
 
-    function downloadXLSX() {
-		window.location.href = '/api/chlorine/download';
+    function downloadXLSX(endpointCustom: string) {
+        window.location.href = endpointCustom;
 	}
 
 </script>
 
-<button on:click={downloadXLSX} class="btn variant-filled-primary">Descarga XLSX</button>
+<button on:click={() => downloadXLSX(endpointCustom)} class="btn variant-filled-primary">Descarga XLSX</button>
