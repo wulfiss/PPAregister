@@ -1,12 +1,14 @@
 <script lang="ts">
     import { FreeChlorineStore } from "$lib/store/chlorineStore";
 	import { onMount } from "svelte";
-	import { fetchDataAndSetStore, tableData } from "$lib/utils/getData";
+	import { fetchDataAndSetStore } from "$lib/utils/getData";
 	import DownloadXlsx from "../button/DownloadXLSX.svelte";
 
 	onMount(async () => {
 		await fetchDataAndSetStore('/api/chlorine', FreeChlorineStore);
 	});
+
+	const endpointCustom = '/api/chlorine/xlsx';
 
 	const cCenter = 'text-center normal-case';
 </script>
@@ -36,7 +38,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<DownloadXlsx />
+				<DownloadXlsx {endpointCustom}/>
 			</tr>
 		</tfoot>
 	</table>
