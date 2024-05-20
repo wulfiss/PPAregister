@@ -21,6 +21,7 @@
     "@tailwindcss/typography": "0.5.13",
     "@types/eslint": "^8.56.0",
     "@types/node": "20.12.12",
+    "@types/xlsx": "^0.0.36",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "autoprefixer": "10.4.19",
@@ -44,6 +45,7 @@
     "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "^2.43.2",
     "dotenv": "^16.4.5",
-    "highlight.js": "11.9.0"
+    "highlight.js": "11.9.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
   }
 }
